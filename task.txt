@@ -1,0 +1,51 @@
+вот прям само тестовое:
+Написать backend-приложение реализующее CRUD для "user API":
+1. Создание
+ POST /user/
+  в body произвольный json с обязательным полем "email" (должно быть уникальным в системе), например
+{"email": "user1@server.com",
+ "first_name": "Vasya",
+ "address": {"city": "Dnipro",
+                   "street": "Shevchenko",
+                  },
+ "gender": "M",
+ "married": false
+}
+ ответ:
+{"id": 1}
+
+2. Получение по id
+ GET /user/1
+  ответ:
+  {"id": 1,
+    "email": "user1@server.com",
+   "first_name": "Vasya",
+   "address": {"city": "Dnipro",
+                      "street": "Shevchenko",
+                  },
+   "gender": "M",
+    "married": false
+}
+3. Получение всех
+ GET /user/
+  ответ:
+  [{"id": 1,
+    "email": "user1@server.com",
+   "first_name": "Vasya",
+   "address": {"city": "Dnipro",
+                      "street": "Shevchenko",
+                  },
+   "gender": "M",
+    "married": false
+}]
+ 4. Модификация:
+  PATCH /user/1
+ {"first_name": "Petya"}
+ 5. Удаление
+  DELETE /user/1
+
+
+Стек технологий на реализацию:
+python
+sanic
+postgresql
