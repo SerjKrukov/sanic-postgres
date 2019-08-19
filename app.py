@@ -9,7 +9,7 @@ app.config.DB_HOST = 'ec2-54-228-243-238.eu-west-1.compute.amazonaws.com'
 app.config.DB_DATABASE = 'd5vbjksh0aovib'
 app.config.DB_USER = 'cptwarcybkjxed'
 app.config.DB_PASSWORD = '84f2039c559006c9165f9aea1cc4d4766f85be6e9e51362243fa157a44c1692c'
-app.config.DB_SSL = 'require'
+# app.config.DB_SSL = 'require'
 db = Gino()
 db.init_app(app)
 app.blueprint(bp)
