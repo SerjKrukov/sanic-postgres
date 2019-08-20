@@ -22,7 +22,7 @@ class User(db.Model):
     data = db.Column(db.JSON())
 
     def __repr__(self):
-        return '{}<{}>'.format(self.data, self.id)
+        return '{}<{}>'.format(self.nickname, self.id)
 
 @app.post('/users')
 async def create_user(request):
