@@ -23,6 +23,9 @@ class User(db.Model):
 
     def __repr__(self):
         return '{}<{}>'.format(self.nickname, self.id)
+@app.route('/')
+async def root_handler(request):
+    return json({'status':'its alive!'})
 
 @app.post('/users')
 async def create_user(request):
