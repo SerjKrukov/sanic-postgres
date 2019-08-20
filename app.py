@@ -95,5 +95,11 @@ async def del_user(request, user_id):
 
     return json({"id": user_id, "status": "deleted"})
 # if __name__ == '__main__':
-port = int(os.environ.get('PORT', 9000))
-app.run(host='0.0.0.0', port=9000, debug=True)
+ON_HEROKU = os.environ.get('ON_HEROKU')
+if ON_HEROKU:
+    # get the heroku port
+    port = int(os.environ.get("PORT", 17995))  # as per OP comments default is 17995
+else:
+    port = 9000
+# port = int(os.environ.get('PORT', 9000))
+app.run(host='0.0.0.0', port=port, debug=True)
